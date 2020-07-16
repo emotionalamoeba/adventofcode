@@ -6,12 +6,12 @@ def fuelForMassStep(mass):
     return math.floor(mass / 3) - 2
 
 def fuelForMass(fuel):
-    additionalFuel = fuelForMassStep(fuel)
+    fuelStep = fuelForMassStep(fuel)
 
-    if (additionalFuel <= 0):
+    if (fuelStep <= 0):
         return 0
 
-    return additionalFuel + fuelForMass(additionalFuel)
+    return fuelStep + fuelForMass(fuelStep)
 
 totalFuelRequired = 0
 f = open("masses.txt", "r")
